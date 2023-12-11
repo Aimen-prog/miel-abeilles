@@ -3,6 +3,7 @@ import math
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+
 class Bee:
     def __init__(self):
         self.flowers = []
@@ -27,6 +28,7 @@ class Hive:
         self.superBees = []
         self.child_list = []
         self.superBees_id = []
+        self.best_bee = None
 
     def getBees(self, file):
         for i in range(100):
@@ -55,6 +57,9 @@ class Hive:
 
     def evolve_population(self):
         current_population = self.superBees_id[:]
+        best_bee = min(current_population, key=lambda x: x.fitness)
+        if self.best_bee is None or best_bee.fitness < self.best_bee.fitness:
+            self.best_bee = best_bee
         for i in range(25):
             parent1 = random.choice(current_population)
             current_population.remove(parent1)
@@ -83,17 +88,44 @@ class Hive:
         plt.show()
 
 
-    def add_mutation(self):
+    # def add_mutation(self):
+    #     current_population = self.superBees_id
+    #     bee = random.choice(current_population)
+    #     i = random.randint(1, len(bee.flowers) - 1)
+    #     bee.flowers = bee.flowers[i:] + bee.flowers[:i]
+
+    def swap_mutation(self):
         current_population = self.superBees_id
         bee = random.choice(current_population)
-        i = random.randint(0, len(bee.flowers) - 1)
-        bee.flowers = bee.flowers[i:] + bee.flowers[:i]
+        i, j = random.sample(range(len(bee.flowers)), 2)
+        bee.flowers[i], bee.flowers[j] = bee.flowers[j], bee.flowers[i]
 
+    def reverse_mutation(self):
+        current_population = self.superBees_id
+        bee = random.choice(current_population)
+        i, j = sorted(random.sample(range(len(bee.flowers)), 2))
+        bee.flowers[i:j+1] = reversed(bee.flowers[i:j+1])
 
+    def add_mutation(self):
+        mutation_type = random.choice(['swap', 'reverse'])
+        if mutation_type == 'swap':
+            self.swap_mutation()
+        elif mutation_type == 'reverse':
+            self.reverse_mutation()
 
+    def plot_best_bee_path(self):
+        x = [point[0] for point in self.best_bee.flowers]
+        y = [point[1] for point in self.best_bee.flowers]
 
+        plt.figure(figsize=(8, 8))
+        plt.plot(x, y, marker='o', linestyle='-')
+        plt.plot(*self.best_bee.hive, color='red', marker='o', label='Hive')
+        plt.xlabel('X-coordinate')
+        plt.ylabel('Y-coordinate')
+        plt.title('Path of the Best Bee')
+        plt.legend()
+        plt.show()
 
-
-
-
-
+    def getBestBeeFitness(self):
+        # print(self.best_bee.fitness)
+        return self.best_bee.fitness
