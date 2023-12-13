@@ -109,8 +109,10 @@ class Hive:
     def add_mutation(self):
         mutation_type = random.choice(['swap', 'reverse'])
         if mutation_type == 'swap':
+            print("swap")
             self.swap_mutation()
         elif mutation_type == 'reverse':
+            print("reverse")
             self.reverse_mutation()
 
     def plot_best_bee_path(self):
