@@ -15,7 +15,7 @@ def main(num_generations):
         if gen % 10 == 0:
             hive.add_mutation()
         # Evolve the population using two-point crossover
-        fitness_list = hive.evolve_population("twopoint")
+        fitness_list = hive.evolve_population("classic")
         # Calculate and store the average fitness for the generation
         average_fitness = sum(fitness_list) / len(fitness_list)
         fitness_per_generation.append(average_fitness)
