@@ -108,7 +108,7 @@ A genealogy tree is created using create_genealogy_tree method, representing the
 
 
 <b>Analysis:</b>
-At first the following configuration was used <b>and repeated</b>:
+At first the following configuration was used <b>and repeated</b> (multiple runs):
 - Two-point crossover method
 - Random mutations (swap and reverse) every 10 generations
   (To mimic real life conditions we keep mutations random)
@@ -124,7 +124,7 @@ Result:
 ![](Images/genealogy_tree_best_bee_twopts.png)
 
 
-<b>Then,</b> this configuration was used <b>and repeated</b>:
+<span style="color:green"><b>Then,</b></span> this configuration was used <b>and repeated</b> (multiple runs):
 
 - Classic crossover (two-halves combination method)
 - Random mutations (swap and reverse) every 10 generations
@@ -141,7 +141,7 @@ Result:
 ![](Images/genealogy_tree_best_bee.png)
 
 
-<b>Conclusion:</b>
+## Conclusion:
 
 To demonstrate that the bees have learned and improved over generations, one can analyze the behavior of the average fitness over time.
 After running multiple experiments we saw that the observed trends are consistent across different runs:
