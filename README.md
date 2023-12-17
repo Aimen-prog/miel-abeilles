@@ -159,8 +159,8 @@ a x=y look-like curve that might indicate that the two-point crossover is leadin
 The stability after 15 generations with classic crossover may imply that this crossover strategy is effective in converging the population to a consistent solution.
 => The classic crossover strategy has facilitated the convergence of the population to a locally optimal solution.
 
-However, fine-tuning and experimenting with a combination of other strategies might help leading to improved performance making the plateau lower
-making the bees reach less fitness score. This way we can see a better path pattern of the best bee taking the shorter path
+However, fine-tuning and experimenting with a combination of other strategies might help by leading to an improved performance making the plateau lower
+and the bees with a less fitness score than the observed one: This way we may see a better path pattern for the best bee (more intelligent path pattern).
 
 
 # Author 
