@@ -43,6 +43,7 @@ class Bee:
         Calculate the fitness of the bee's path based on Euclidean distance between flowers.
         """
         self.flowers.insert(0, self.hive)  # Start from the hive
+        self.flowers.append(self.hive) #return to the hive
         for flower in range(len(self.flowers)):
             x1, y1 = self.flowers[flower]
             x2, y2 = self.flowers[(flower + 1) % len(self.flowers)]
