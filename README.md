@@ -89,13 +89,19 @@ elif mutation_type == 'reverse':
     self.reverse_mutation()
 ````
 
-*Important Numbers:*
-The population size is set to 100 in the getBees method
-The top 50 bees are selected as the "super bees" based on their fitness in the getSuperBees method
-The number of generations is set by the num_generations variable in the main function: 50
-Crossover is set to be performed every generation using "classic" crossover. 
-A random mutation is added every 10 generations (random mutation swap or reverse).
-The best bee in each generation is tracked, and the overall best bee is stored in the best_bee attribute of the Hive object.
+**Important Numbers:**
+
+- The population size is set to 100 in the getBees method
+
+- The top 50 bees are selected as the "super bees" based on their fitness in the getSuperBees method
+
+- The number of generations is set by the num_generations variable in the main function: 50
+
+- Crossover is set to be performed every generation using "classic" crossover. 
+
+- A random mutation is added every 10 generations (random mutation swap or reverse).
+
+- The best bee in each generation is tracked, and the overall best bee is stored in the best_bee attribute of the Hive object.
 
 
 <b>Plotting and Output:</b>
