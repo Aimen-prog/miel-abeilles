@@ -132,36 +132,6 @@ class Hive:
         plt.legend()
         plt.show()
 
-    # def create_genealogy_tree(self):
-    #     graph = nx.DiGraph()
-    #     current_bee = self.best_bee
-    #     tmp = [current_bee]
-    #     while tmp:
-    #         current_bee = tmp[0]
-    #         graph.add_node(current_bee.id, label=f"Bee {current_bee.id}", color="red")
-    #         if current_bee.parent1:
-    #             graph.add_edge(current_bee.parent1.id, current_bee.id)
-    #
-    #         if current_bee.parent2:
-    #             graph.add_edge(current_bee.parent2.id, current_bee.id)
-    #
-    #         tmp = tmp[1:]
-    #         if current_bee.parent1:
-    #             tmp.append(current_bee.parent1)
-    #         if current_bee.parent2:
-    #             tmp.append(current_bee.parent2)
-    #     pos = nx.spring_layout(graph)
-    #     # Set color for nodes based on the 'color' attribute
-    #     node_colors = ["pink" if node == self.best_bee.id else "skyblue" for node in graph.nodes]
-    #     labels = nx.get_edge_attributes(graph, 'label')
-    #     nx.draw(graph, pos, with_labels=True, node_size=600, node_color=node_colors, font_size=10, font_color="black",
-    #             font_weight="bold")
-    #     nx.draw_networkx_edge_labels(graph, pos, edge_labels=labels)
-    #     plt.show()
-
-
-
-
 
     def create_genealogy_tree(self, num_generations):
         graph = nx.DiGraph()

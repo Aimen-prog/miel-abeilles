@@ -19,5 +19,5 @@ def main(num_generations):
     hive.create_genealogy_tree(min(5, num_generations))  # Use min to ensure it doesn't exceed the available generations
 
 if __name__ == "__main__":
-    num_generations = 10  # number of generations
+    num_generations = 100  # number of generations
     main(num_generations)
