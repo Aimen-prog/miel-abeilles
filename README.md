@@ -107,8 +107,10 @@ The path of the best bee in the final generation is plotted using plot_best_bee_
 A genealogy tree is created using create_genealogy_tree method, representing the ancestry of the best bee for a maximum of 5 generations.
 
 
-<b>Analysis:</b>
+## Analysis:
+<br>
 At first the following configuration was used <b>and repeated</b> (multiple runs):
+
 - Two-point crossover method
 - Random mutations (swap and reverse) every 10 generations
   (To mimic real life conditions we keep mutations random)
@@ -124,7 +126,7 @@ Result:
 ![](Images/genealogy_tree_best_bee_twopts.png)
 
 
-<span style="color:green"><b>Then,</b></span> this configuration was used <b>and repeated</b> (multiple runs):
+<b>Then,</b> this configuration was used <b>and repeated</b> (multiple runs):
 
 - Classic crossover (two-halves combination method)
 - Random mutations (swap and reverse) every 10 generations
